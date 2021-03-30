@@ -1,0 +1,1 @@
+/Users/manjumotodaishi/dotfiles/.vimrc
