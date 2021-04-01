@@ -1,0 +1,78 @@
+" NERDTreeを利用するとVim上で視認性の高いディレクトリツリーを表示することができます
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  let NERDTreeShowHidden=1
+    nnoremap <silent><C-a> :NERDTreeFind<CR>:vertical res 30<CR>
+'''
+
+" vim-airlineを使うとグラフィカルで見た目がカッコいいステータスバーを手軽に利用することができます
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+depends = 'vim-airline'
+hook_add = '''
+    let g:airline_theme = 'onedark'
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#buffer_idx_mode = 1
+    let g:airline#extensions#tabline#fnamemod = ':t'
+'''
+
+" vim-gitgutterはGitの差分を行番号横のsignで分かりやすく示してくれます
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+	set signcolumn=yes
+	let g:gitgutter_async = 1
+	let g:gitgutter_sign_modified = 'rw'
+	highlight GitGutterAdd ctermfg=green
+	highlight GitGutterChange ctermfg=yellow
+	highlight GitGutterDelete ctermfg=red
+	highlight GitGutterChangeDelete ctermfg=yellow
+'''
+
+" tomtom/tcomment_vim を使うと Vim でコメントアウト操作を手軽に行えるようになります
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+hook_add = '''
+	vnoremap ? :'<,'>TComment<CR>
+'''
+
+" luochen1990/rainbow は Vim 上でカラフルな括弧を表示してくれます
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = '''
+	let g:rainbow_active = 1
+'''
+
+
+" alvan/vim-closetag を利用すると閉じタグを自動で補完してくれます
+[[plugins]]
+repo = 'alvan/vim-closetag'
+on_ft = ['html', 'xhtml', 'javascript', 'typescript', 'javascript.jsx', 'typescript.tsx']
+hook_add = '''
+  let g:closetag_filenames='*.html'
+  let g:closetag_xhtml_filenames='*.jsx,*.tsx,*.vue'
+  let g:closetag_filetypes='html'
+  let g:closetag_xhtml_filetypes='jsx,tsx,javascript.jsx,typescript.tsx,vue'
+  let g:closetag_emptyTags_caseSensitive=1
+  let g:closetag_shortcut='>'
+
+" ryanoasis/vim-devicons は vim の中でアイコンを表示してくれるプラグインです。
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+# icons
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+" easymotion/vim-easymotion は高速なカーソル移動を実現するプラグインです。
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+   nmap <Leader> <Plug>(easymotion-prefix)
+   let g:EasyMotion_do_mapping = 0 # デフォルトキーマッピングの無効化
+   nmap <Leader>w <Plug>(easymotion-jumptoanywhere) # 全画面移動
+   nmap <Leader>jk <Plug>(easymotion-sol-bd-jk) # 行頭移動
+   nmap <Leader>s <Plug>(easymotion-s2) # 全画面検索移動
