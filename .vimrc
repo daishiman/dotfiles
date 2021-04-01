@@ -1,6 +1,7 @@
 "--------------------------------------------------------------
 "          shell                                            <<<
 "--------------------------------------------------------------
+" シェルを指定してください
 set shell=/bin/zsh
 " <<<
 
@@ -192,6 +193,7 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
+" インストールしていないプラグインがあればインストールを実行
 if dein#check_install()
   call dein#install()
 endif
@@ -210,5 +212,5 @@ if (empty($TMUX))
 endif
 
 syntax on
-" colorscheme onedark
+colorscheme onedark
 " <<<

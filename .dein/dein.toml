@@ -1,4 +1,4 @@
-" NERDTreeを利用するとVim上で視認性の高いディレクトリツリーを表示することができます
+# NERDTreeを利用するとVim上で視認性の高いディレクトリツリーを表示することができます
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
@@ -76,3 +76,7 @@ hook_add = '''
    nmap <Leader>w <Plug>(easymotion-jumptoanywhere) # 全画面移動
    nmap <Leader>jk <Plug>(easymotion-sol-bd-jk) # 行頭移動
    nmap <Leader>s <Plug>(easymotion-s2) # 全画面検索移動
+
+" simeji/winresizer は画面サイズの変更を簡単にするプラグインです
+[[plugins]]
+repo = 'simeji/winresizer'
