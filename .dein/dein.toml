@@ -6,7 +6,7 @@ hook_add = '''
     nnoremap <silent><C-a> :NERDTreeFind<CR>:vertical res 30<CR>
 '''
 
-" vim-airlineを使うとグラフィカルで見た目がカッコいいステータスバーを手軽に利用することができます
+# vim-airlineを使うとグラフィカルで見た目がカッコいいステータスバーを手軽に利用することができます
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 [[plugins]]
@@ -19,7 +19,7 @@ hook_add = '''
     let g:airline#extensions#tabline#fnamemod = ':t'
 '''
 
-" vim-gitgutterはGitの差分を行番号横のsignで分かりやすく示してくれます
+# vim-gitgutterはGitの差分を行番号横のsignで分かりやすく示してくれます
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
@@ -32,14 +32,14 @@ hook_add = '''
 	highlight GitGutterChangeDelete ctermfg=yellow
 '''
 
-" tomtom/tcomment_vim を使うと Vim でコメントアウト操作を手軽に行えるようになります
+# tomtom/tcomment_vim を使うと Vim でコメントアウト操作を手軽に行えるようになります
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 hook_add = '''
 	vnoremap ? :'<,'>TComment<CR>
 '''
 
-" luochen1990/rainbow は Vim 上でカラフルな括弧を表示してくれます
+# luochen1990/rainbow は Vim 上でカラフルな括弧を表示してくれます
 [[plugins]]
 repo = 'luochen1990/rainbow'
 hook_add = '''
@@ -47,7 +47,7 @@ hook_add = '''
 '''
 
 
-" alvan/vim-closetag を利用すると閉じタグを自動で補完してくれます
+# alvan/vim-closetag を利用すると閉じタグを自動で補完してくれます
 [[plugins]]
 repo = 'alvan/vim-closetag'
 on_ft = ['html', 'xhtml', 'javascript', 'typescript', 'javascript.jsx', 'typescript.tsx']
@@ -59,7 +59,7 @@ hook_add = '''
   let g:closetag_emptyTags_caseSensitive=1
   let g:closetag_shortcut='>'
 
-" ryanoasis/vim-devicons は vim の中でアイコンを表示してくれるプラグインです。
+# ryanoasis/vim-devicons は vim の中でアイコンを表示してくれるプラグインです。
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
@@ -67,7 +67,7 @@ repo = 'ryanoasis/vim-devicons'
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
-" easymotion/vim-easymotion は高速なカーソル移動を実現するプラグインです。
+# easymotion/vim-easymotion は高速なカーソル移動を実現するプラグインです。
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 hook_add = '''
@@ -77,6 +77,6 @@ hook_add = '''
    nmap <Leader>jk <Plug>(easymotion-sol-bd-jk) # 行頭移動
    nmap <Leader>s <Plug>(easymotion-s2) # 全画面検索移動
 
-" simeji/winresizer は画面サイズの変更を簡単にするプラグインです
+# simeji/winresizer は画面サイズの変更を簡単にするプラグインです
 [[plugins]]
 repo = 'simeji/winresizer'
