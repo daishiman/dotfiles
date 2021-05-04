@@ -1,3 +1,150 @@
+#--------------------------------------------------------------#
+##        dein.toml                                           ##
+#--------------------------------------------------------------#
+# Vundle.vim
+[[plugins]]
+repo = 'VundleVim/Vundle.vim'
+
+# Ruby
+[[plugins]]
+repo = 'tpope/vim-endwise'
+on_ft = ['ruby']
+
+# Ruby
+[[plugins]]
+repo = 'tpope/vim-rails'
+
+# directory tree
+[[plugins]]
+repo = 'preservim/nerdtree'
+hook_add = '''
+  let NERDTreeShowHidden=1
+  autocmd VimEnter * NERDTree
+  nnoremap <silent><C-a> :NERDTreeFind<CR>:vertical res 40<CR>
+'''
+
+# enable tmux to use autoread
+[[plugins]]
+repo = 'tmux-plugins/vim-tmux-focus-events'
+
+# ウィンドウの幅をctr+eで調整
+[[plugins]]
+repo = 'simeji/winresizer'
+
+# コメントアウト
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+hook_add = '''
+  vnoremap ? :'<,'>TComment<CR>
+'''
+
+# gitのHEADとの差分を表示
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+  set signcolumn=yes
+  let g:gitgutter_async = 1
+  let g:gitgutter_sign_modified = 'rw'
+  highlight GitGutterAdd ctermfg=green
+  highlight GitGutterChange ctermfg=yellow
+  highlight GitGutterDelete ctermfg=red
+  highlight GitGutterChangeDelete ctermfg=yellow
+'''
+
+# YouCompleteMe
+[[plugins]]
+repo = 'ycm-core/YouCompleteMe'
+
+# git blame用
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# fzf
+[[plugins]]
+repo = 'junegunn/fzf'
+hook_post_update = './install --all'
+merged = 0
+
+# fzf.vim
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+  command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+  \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+  \ : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+  \ <bang>0)
+  nnoremap <C-g> :Rg<Space>
+  nnoremap <C-p> :GFiles<CR>
+  nnoremap <C-l> :Files<CR>
+  nnoremap <C-h> :History<CR>
+'''
+
+# 括弧のレインボーハイライト
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = '''
+  let g:rainbow_active = 1
+'''
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+[[plugins]]
+repo = 'SirVer/ultisnips'
+hook_add = '''
+  let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+  let g:UltiSnipsExpandTrigger="<Down>"
+'''
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+  nmap <Leader> <Plug>(easymotion-prefix)
+  let g:EasyMotion_do_mapping = 0
+  nmap <Leader>w <Plug>(easymotion-jumptoanywhere)
+  nmap <Leader>jk <Plug>(easymotion-sol-bd-jk)
+  nmap <Leader>s <Plug>(easymotion-s2)
+'''
+
+[[plugins]]
+repo = 'ruanyl/vim-gh-line'
+
+#--------------------------------------------------------------#
+##        LSP                                                 ##
+#--------------------------------------------------------------#
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+build = '''
+  git checkout release
+'''
+hook_add = '''
+  inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+'''
+
+
+
+# dein.vim インストール
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
 # NERDTreeを利用するとVim上で視認性の高いディレクトリツリーを表示することができます
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -72,15 +219,64 @@ repo = 'ryanoasis/vim-devicons'
 repo = 'easymotion/vim-easymotion'
 hook_add = '''
    nmap <Leader> <Plug>(easymotion-prefix)
-   # デフォルトキーマッピングの無効化
-   let g:EasyMotion_do_mapping = 0
-   # 全画面移動
-   nmap <Leader>w <Plug>(easymotion-jumptoanywhere)
-   # 行頭移動
-   nmap <Leader>jk <Plug>(easymotion-sol-bd-jk)
-   # 全画面検索移動
-   nmap <Leader>s <Plug>(easymotion-s2)
+   let g:EasyMotion_do_mapping = 0 # デフォルトキーマッピングの無効化
+   nmap <Leader>w <Plug>(easymotion-jumptoanywhere) # 全画面移動
+   nmap <Leader>jk <Plug>(easymotion-sol-bd-jk) # 行頭移動
+   nmap <Leader>s <Plug>(easymotion-s2) # 全画面検索移動
 
 # simeji/winresizer は画面サイズの変更を簡単にするプラグインです
 [[plugins]]
 repo = 'simeji/winresizer'
+
+# fzf はカレントディレクトリから高速でファイルや単語をあいまい検索することができます
+[[plugins]]
+repo = 'junegunn/fzf'
+hook_post_update = './install --all'
+merged = 0
+
+# fzf.vim
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+    command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+    \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+    \ : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+    \ <bang>0)
+    nnoremap <C-g> :Rg<Space>
+    nnoremap <C-p> :GFiles<CR>
+    nnoremap <C-h> :History<CR>
+'''
+
+# LSPをサポートしているプラグイン「coc.nvim」
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+build = '''
+  git checkout release
+'''
+hook_add = '''
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+'''
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = 'let g:indent_guides_enable_on_vim_startup = 1'
