@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/manjumotodaishi/wonderful_portal/wonderful_portal'
+let g:netrw_dirhist_4='/Users/manjumotodaishi/wonderful_portal/wonderful_portal/app/controllers'
+let g:netrw_dirhist_3='/Users/manjumotodaishi/wonderful_portal/wonderful_portal/app'
+let g:netrw_dirhist_2='/Users/manjumotodaishi/wonderful_portal/wonderful_portal'
+let g:netrw_dirhist_1='/Users/manjumotodaishi/dotfiles/.dein/dein.vim'
+let g:netrw_dirhist_0='/Users/manjumotodaishi/.tmux'
+let g:netrw_dirhist_9='/Users/manjumotodaishi/wonderful_portal/wonderful_portal'
+let g:netrw_dirhist_8='/Users/manjumotodaishi/wonderful_editor/spec/requests/api/v1'
+let g:netrw_dirhist_7='/Users/manjumotodaishi/wonderful_editor/spec/requests/api'
+let g:netrw_dirhist_6='/Users/manjumotodaishi/wonderful_editor/spec/requests'
