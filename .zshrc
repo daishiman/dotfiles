@@ -1,3 +1,4 @@
+PATH=$PATH:$HOME/bin
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -7,141 +8,34 @@ export ZSH="/Users/manjumotodaishi/.oh-my-zsh"
 # oh-my-zsh がプロンプトを出さずに自動的にアップグレードする
 DISABLE_UPDATE_PROMPT=true
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="candy"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-# plugins=(git zsh-syntax-highlighting zsh-completions)
-
 # zsh-completionsの設定
 autoload -U compinit && compinit -u
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
 # # 追加したソフトやパッケージ用のコマンドのパスを通す
 export PATH=/usr/local/bin:$PATH
+
 # rbenvのパスを通す
 eval "$(rbenv init -)"
-
-# zplugを導入するPATH
-# export ZPLUG_HOME=/usr/local/opt/zplug
-# source $ZPLUG_HOME/init.zsh
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/test_user/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# oh-my-zshで利用できるテーマを指定
+#PATH=$PATH:$HOME/bin oh-my-zshで利用できるテーマを指定
  ZSH_THEME="xiong-chiamiov-plus"
 # ZSH_THEME="rkj-repos"
 # ZSH_THEME="dallas"
 # ZSH_THEME="candy"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 # oh my zshで利用できるプラグインを指定
 plugins=(brew brew-cask cdd gem git rbenv vagrant zsh-syntax-highlighting zsh-completions)
 
 # zsh-completionsの設定
 autoload -U compinit && compinit -u
-
-# source $ZSH/oh-my-zsh.sh
-
-# source ~/git-completion.zsh
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
 
 # alias
 alias be='bundle exec'
@@ -216,15 +110,22 @@ alias gst='git stash'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gstu='git stash -u'
+alias ide='~/ide.sh'
+alias lg='lazygit'
 alias ll='ls -la'
 alias ls='ls -G'
 alias mss='mysql.server start'
+alias p='php'
 alias r='ruby'
 alias rc='rails c'
 alias rs='rails s'
 alias sberc='sudo bundle exec rails c'
 alias so='source'
 alias sz='source ~/.zshrc'
+alias t='tmux'
+alias tv='tmux split-window -v -p20'
+alias th='tmux split-window -h'
+alias vdv='vim dotfiles/.vimrc'
 alias vi='vim'
 alias vz='vim ~/.zshrc'
 alias yb='yarn build'
@@ -424,6 +325,22 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+# # シェルログインとともにtmuxを起動
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+# export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+# export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+
+# tmux の自動画面分割
+# tmux split-window -v
+# tmux split-window -h
+# tmux resize-pane -D 15
+# tmux select-pane -t 1
+# tmux split-window -v -p 30
+# tmux split-window -h -p 66
+# tmux split-window -h -p 50
+
 
 # nodenv
 export PATH="$HOME/.nodenv/bin:$PATH"
@@ -436,6 +353,302 @@ export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
 
 # pkg-configがluajit-openrestyを見つけるための設定
 export PKG_CONFIG_PATH="/usr/local/opt/luajit-openresty/lib/pkgconfig"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+
+
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
 export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
 export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
 export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
